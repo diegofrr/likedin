@@ -27,10 +27,15 @@ addStyle(`
 
     .clickedin__liked svg {
         opacity: 1;
+        filter: drop-shadow(0 0 20px rgb(0, 0, 0, 1));
     }
 
     .clickedin_v1 svg > * {
         fill: white;
+    }
+
+    .clickedin_v1__video {
+        height: calc(100% - 50px);
     }
 
     .clickedin_v1__iframe {
@@ -40,7 +45,7 @@ addStyle(`
     }
 
     header {
-        z-index: 999 !important;
+        z-index: 9999 !important;
     }
 `);
 
@@ -53,9 +58,9 @@ function apply() {
             let content =
                 post.querySelector('.feed-shared-update-v2__content') ||
                 post.querySelector('.update-components-linkedin-video__container') ||
+                post.querySelector('.update-components-article__link-container') ||
                 post.querySelector('.feed-shared-event') ||
                 post.querySelector('.feed-shared-celebration') ||
-                post.querySelector('.update-components-article') ||
                 post.querySelector('.artdeco-carousel__content') ||
                 post.querySelector('.update-components-showcase') ||
                 post.querySelector('.update-components-image');
@@ -68,9 +73,8 @@ function apply() {
             content.style.position = 'relative';
             content.appendChild(span);
 
-            if (content.querySelector('iframe')) {
-                span.classList.add('clickedin_v1__iframe')
-            }
+            if (content.querySelector('iframe')) span.classList.add('clickedin_v1__iframe')
+            else if (content.querySelector('video')) span.classList.add('clickedin_v1__video')
 
             span.onclick = () => {
                 const clickable =
@@ -88,7 +92,7 @@ function apply() {
             span.ondblclick = () => {
                 const button = post.querySelector('.reactions-react-button button');
                 open = false;
-                button.click();
+                if (button.getAttribute('aria-pressed') === 'false') button.click();
                 span.classList.add('clickedin__liked');
 
                 setTimeout(() => {
