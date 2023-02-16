@@ -100,10 +100,14 @@ function apply() {
             }
 
             span.ondblclick = () => {
-                const button = post.querySelector('.reactions-react-button button');
                 open = false;
+                const distance = window.scrollY;
+
+                const button = post.querySelector('.reactions-react-button button');
                 if (button.getAttribute('aria-pressed') === 'false') button.click();
                 span.classList.add('clickedin__liked');
+
+                window.scrollTo(0, distance);
 
                 setTimeout(() => {
                     span.classList.remove('clickedin__liked');
