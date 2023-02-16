@@ -56,14 +56,14 @@ function apply() {
     posts.forEach(post => {
         if (!hasAdded(post)) {
             let content =
-                post.querySelector('.feed-shared-update-v2__content') ||
                 post.querySelector('.update-components-linkedin-video__container') ||
                 post.querySelector('.update-components-article__link-container') ||
                 post.querySelector('.feed-shared-event') ||
                 post.querySelector('.feed-shared-celebration') ||
                 post.querySelector('.artdeco-carousel__content') ||
                 post.querySelector('.update-components-showcase') ||
-                post.querySelector('.update-components-image');
+                post.querySelector('.update-components-image') ||
+                post.querySelector('.feed-shared-update-v2__content');
 
             if (!content) return;
 
