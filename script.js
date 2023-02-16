@@ -38,6 +38,10 @@ addStyle(`
         height: calc(100% - 50px);
     }
 
+    .clickedin_v1__video svg {
+        margin-top: 50px;
+    }
+
     .clickedin_v1__iframe {
         margin: 40px;
         height: calc(100% - 80px);
@@ -59,10 +63,12 @@ function apply() {
                 post.querySelector('.update-components-linkedin-video__container .relative') ||
                 post.querySelector('.update-components-linkedin-video__container') ||
                 post.querySelector('.update-components-article__link-container') ||
+                post.querySelector('.feed-shared-external-video__container') ||
                 post.querySelector('.feed-shared-event') ||
                 post.querySelector('.feed-shared-celebration') ||
                 post.querySelector('.artdeco-carousel__content') ||
                 post.querySelector('.update-components-showcase') ||
+                post.querySelector('.update-components-image .relative') ||
                 post.querySelector('.update-components-image') ||
                 post.querySelector('.feed-shared-update-v2__content') ||
                 post.querySelector('.feed-shared-update-v2__update-content-wrapper');
@@ -72,7 +78,9 @@ function apply() {
             const span = document.createElement('span');
             span.innerHTML = likeIcon();
             span.classList.add('clickedin_v1');
+
             content.style.position = 'relative';
+            content.style.userSelect = 'none';
             content.appendChild(span);
 
             if (content.querySelector('iframe')) span.classList.add('clickedin_v1__iframe')
