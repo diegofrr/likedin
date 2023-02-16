@@ -27,7 +27,7 @@ addStyle(`
 
     .clickedin__liked svg {
         opacity: 1;
-        filter: drop-shadow(0 0 20px rgb(0, 0, 0, 1));
+        filter: drop-shadow(0 0 20px rgb(0, 0, 0, 0.5));
     }
 
     .clickedin_v1 svg > * {
@@ -56,6 +56,7 @@ function apply() {
     posts.forEach(post => {
         if (!hasAdded(post)) {
             let content =
+                post.querySelector('.update-components-linkedin-video__container .relative') ||
                 post.querySelector('.update-components-linkedin-video__container') ||
                 post.querySelector('.update-components-article__link-container') ||
                 post.querySelector('.feed-shared-event') ||
@@ -63,7 +64,8 @@ function apply() {
                 post.querySelector('.artdeco-carousel__content') ||
                 post.querySelector('.update-components-showcase') ||
                 post.querySelector('.update-components-image') ||
-                post.querySelector('.feed-shared-update-v2__content');
+                post.querySelector('.feed-shared-update-v2__content') ||
+                post.querySelector('.feed-shared-update-v2__update-content-wrapper');
 
             if (!content) return;
 
