@@ -1,58 +1,3 @@
-// ADD STYLE
-function addStyle(styleString) {
-    const style = document.createElement('style');
-    style.textContent = styleString;
-    document.head.append(style);
-}
-
-addStyle(`
-    .clickedin_v1 {
-        height: 100%;
-        width: 100%;
-        display: block;
-        position: absolute;
-        z-index: 1000;
-        top: 0;
-        left: 0;
-        display: grid;
-        place-items: center;
-    }
-
-    .clickedin_v1 svg {
-        width: 80px;
-        height: 80px;
-        transition: all .5s ease;
-        opacity: 0;
-    }
-
-    .clickedin__liked svg {
-        opacity: 1;
-        filter: drop-shadow(0 0 20px rgb(0, 0, 0, 0.5));
-    }
-
-    .clickedin_v1 svg > * {
-        fill: white;
-    }
-
-    .clickedin_v1__video {
-        height: calc(100% - 50px);
-    }
-
-    .clickedin_v1__video svg {
-        margin-top: 50px;
-    }
-
-    .clickedin_v1__iframe {
-        margin: 40px;
-        height: calc(100% - 80px);
-        width: calc(100% - 80px);
-    }
-
-    header {
-        z-index: 9999 !important;
-    }
-`);
-
 let open = true;
 
 function apply() {
@@ -132,11 +77,18 @@ function removeAll() {
     })
 }
 
-try {
-    const ob = new MutationObserver(() => apply());
-    ob.observe(document.querySelector('.scaffold-finite-scroll__content'),
-        { childList: true, subtree: true })
-} catch { }
+const bodyObserve = new MutationObserver(() => {
+    try {
+        const ob = new MutationObserver(() => apply());
+        ob.observe(document.querySelector('.scaffold-layout__main'),
+            { childList: true, subtree: true });
+
+        bodyObserve.disconnect();
+    } catch { }
+
+});
+
+bodyObserve.observe(document.body, { childList: true })
 
 function likeIcon() {
     return `<?xml version="1.0" encoding="utf-8"?>

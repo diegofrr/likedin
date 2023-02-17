@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Likedin",
+    "description": "Curta posts no Linkedin facilmente com duplo clique.",
+    "version": "1.0.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.linkedin.com/*"
+            ],
+            "js": [
+                "script.js"
+            ],
+            "css": [
+                "styles.css"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "/assets/images/icon_16.png",
+        "32": "/assets/images/icon_32.png",
+        "48": "/assets/images/icon_48.png",
+        "128": "/assets/images/icon_128.png"
+    }
+}
