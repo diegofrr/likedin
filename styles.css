@@ -1,4 +1,4 @@
-.clickedin_v1 {
+.likedin_v1 {
     height: 100%;
     width: 100%;
     display: block;
@@ -11,31 +11,31 @@
     cursor: pointer;
 }
 
-.clickedin_v1 svg {
+.likedin_v1 svg {
     width: 100px;
     height: 100px;
     transition: all .5s ease;
     opacity: 0;
 }
 
-.clickedin__liked svg {
+.likedin__liked svg {
     opacity: 1;
     filter: drop-shadow(0 0 20px rgb(0, 0, 0, 0.5));
 }
 
-.clickedin_v1 svg>* {
+.likedin_v1 svg>* {
     fill: #FFFFFF;
 }
 
-.clickedin_v1__video {
+.likedin_v1__video {
     height: calc(100% - 50px);
 }
 
-.clickedin_v1__video svg {
+.likedin_v1__video svg {
     margin-top: 50px;
 }
 
-.clickedin_v1__iframe {
+.likedin_v1__iframe {
     margin: 40px;
     height: calc(100% - 80px);
     width: calc(100% - 80px);

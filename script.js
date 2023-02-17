@@ -22,14 +22,14 @@ function apply() {
 
             const span = document.createElement('span');
             span.innerHTML = likeIcon();
-            span.classList.add('clickedin_v1');
+            span.classList.add('likedin_v1');
 
             content.style.position = 'relative';
             content.style.userSelect = 'none';
             content.appendChild(span);
 
-            if (content.querySelector('iframe')) span.classList.add('clickedin_v1__iframe')
-            else if (content.querySelector('video')) span.classList.add('clickedin_v1__video')
+            if (content.querySelector('iframe')) span.classList.add('likedin_v1__iframe')
+            else if (content.querySelector('video')) span.classList.add('likedin_v1__video')
 
             span.onclick = () => {
                 const clickable =
@@ -50,12 +50,12 @@ function apply() {
 
                 const button = post.querySelector('.reactions-react-button button');
                 if (button.getAttribute('aria-pressed') === 'false') button.click();
-                span.classList.add('clickedin__liked');
+                span.classList.add('likedin__liked');
 
                 window.scrollTo(0, distance);
 
                 setTimeout(() => {
-                    span.classList.remove('clickedin__liked');
+                    span.classList.remove('likedin__liked');
                 }, 1000);
             }
 
@@ -67,11 +67,11 @@ function apply() {
 apply();
 
 function hasAdded(element) {
-    return element.querySelector('.clickedin_v1');
+    return element.querySelector('.likedin_v1');
 }
 
 function removeAll() {
-    const items = document.querySelectorAll('.clickedin_v1');
+    const items = document.querySelectorAll('.likedin_v1');
     items.forEach(item => {
         item.remove();
     })
