@@ -20,13 +20,13 @@ git clone https://github.com/diegofrr/likedin
 3) Ative o <b>modo desenvolvedor</b>;
 4) Carregue a extensão "sem empacotador" ou arraste e solte a pasta do repositório para dentro do navegador.
 
-Pronto! A extensão já está ativa e funcionando. Siga até o Linkedin para testar, fazendo um <b><ins>clique duplo</ins></b> dentro do conteúdo principal dos posts.
+Pronto! A extensão já está ativa e funcionando. Siga até o Linkedin para utilizar, realizando um <b><ins>clique duplo</ins></b> dentro do conteúdo principal dos posts.
 
 ### 🚀 Roadmap
 - [ ] Painel de configuração;
 - [ ] Publicar na Google Web Store;
 - [ ] Criar versão para o Firefox.
 
-### 🤏 Demonstração
+### 📽️ Demonstração
 
 <video src="https://user-images.githubusercontent.com/56923620/219525692-31d7bc97-9378-4cf4-9eec-08976dadc9e4.mp4"/>
