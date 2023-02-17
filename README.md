@@ -26,3 +26,7 @@ Pronto! A extensão já está ativa e funcionando. Siga até o Linkedin para tes
 - [ ] Painel de configuração;
 - [ ] Publicar na Google Web Store;
 - [ ] Criar versão para o Firefox.
+
+### 🤏 Demonstração
+
+<video src="https://user-images.githubusercontent.com/56923620/219525692-31d7bc97-9378-4cf4-9eec-08976dadc9e4.mp4"/>
