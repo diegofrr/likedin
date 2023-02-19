@@ -6,9 +6,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://www.linkedin.com/feed/*",
-                "https://www.linkedin.com/posts/*",
-                "https://www.google.com/"
+                "https://www.linkedin.com/*"
             ],
             "js": [
                 "script.js"
