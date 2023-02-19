@@ -5,7 +5,7 @@ Likedin<br/>
 </h1>
 Curta posts no LinkedIn facilmente utilizando um clique duplo.
 
-<b>`v1.2`</b>
+<b>`v1.1`</b>
 
 </div>
 
@@ -29,4 +29,4 @@ Pronto! A extensão foi instalada! Pra utilizar, siga até o Linkedin, <b>abra a
 
 ### 📽️ Demonstração
 
-<video src="https://user-images.githubusercontent.com/56923620/219911523-add0af68-55b6-4344-8149-4bdbb373552c.mp4"/>
+<video src="https://user-images.githubusercontent.com/56923620/219934212-b391dd54-9793-4efa-8f22-28227cf9309c.mp4"/>
