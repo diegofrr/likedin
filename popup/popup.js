@@ -1,7 +1,10 @@
+const acessContainer = document.querySelector('._linkedin_acess_container');
+const acessButton = document.querySelector('._linkedin_acess');
+const optionsContainer = document.querySelector('.options_container');
 const toggleStatus = document.querySelector('.active_option .status');
 const toggleInput = document.querySelector('.active_option input');
 
-let open = true;
+let openned = true;
 let working = false;
 
 (async () => {
@@ -94,14 +97,14 @@ function apply() {
                     content.querySelector('a');
 
                 setTimeout(() => {
-                    if (open) clickable.click();
+                    if (openned) clickable.click();
                 }, 500);
 
-                open = true;
+                openned = true;
             }
 
             span.ondblclick = () => {
-                open = false;
+                openned = false;
                 const distance = window.scrollY;
 
                 const button = post.querySelector('.reactions-react-button button');
@@ -125,9 +128,10 @@ function apply() {
 
     function likeIcon() {
         return `<?xml version="1.0" encoding="utf-8"?>
-        <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9 4.5C15.9 3 14.418 2 13.26 2c-.806 0-.869.612-.993 1.82-.055.53-.121 1.174-.267 1.93-.386 2.002-1.72 4.56-2.996 5.325V17C9 19.25 9.75 20 13 20h3.773c2.176 0 2.703-1.433 2.899-1.964l.013-.036c.114-.306.358-.547.638-.82.31-.306.664-.653.927-1.18.311-.623.27-1.177.233-1.67-.023-.299-.044-.575.017-.83.064-.27.146-.475.225-.671.143-.356.275-.686.275-1.329 0-1.5-.748-2.498-2.315-2.498H15.5S15.9 6 15.9 4.5zM5.5 10A1.5 1.5 0 0 0 4 11.5v7a1.5 1.5 0 0 0 3 0v-7A1.5 1.5 0 0 0 5.5 10z" fill="#000000"/>
-        </svg>`
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_119_8)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.69 9.5H5.06C4.58865 9.55997 4.16012 9.80389 3.86788 10.1785C3.57565 10.5532 3.44341 11.0282 3.5 11.5C3.53064 11.9138 3.71886 12.3 4.02585 12.5791C4.33284 12.8582 4.73521 13.0088 5.15 13H5.44C5.07924 13.0105 4.73694 13.1618 4.48645 13.4216C4.23596 13.6815 4.09724 14.0291 4.1 14.39C4.10124 14.7476 4.23644 15.0918 4.47894 15.3547C4.72144 15.6175 5.05363 15.78 5.41 15.81C5.18684 15.9746 5.01677 16.201 4.92077 16.4611C4.82478 16.7213 4.80706 17.0039 4.8698 17.274C4.93254 17.5441 5.07301 17.79 5.27385 17.9812C5.47469 18.1724 5.72713 18.3006 6 18.35C5.83163 18.6545 5.77839 19.0095 5.85 19.35C5.93799 19.6799 6.1352 19.9703 6.40944 20.1737C6.68368 20.3771 7.01876 20.4815 7.36 20.47H11.44C11.9663 20.4688 12.4904 20.4016 13 20.27L15.56 19.52H18.94C20.72 19.45 21.2 11.26 18.94 11.26H17.94C17.77 11.26 17.67 10.92 17.23 10.44C16.58 9.73 15.84 8.82 15.32 8.31C14.0717 7.21355 13.0522 5.88141 12.32 4.39C11.9 3.42 11.85 3 11 3C10.6518 3.04262 10.3329 3.21626 10.1081 3.4856C9.88336 3.75495 9.76961 4.09979 9.79 4.45C9.79 4.7 9.92 5.57 9.97 5.88C10.3201 7.188 10.9175 8.41682 11.73 9.5" fill="white"/>
+        </g><defs><clipPath id="clip0_119_8"><rect width="24" height="24" fill="white"/>
+        </clipPath></defs></svg>`
     }
 }
 
@@ -152,7 +156,7 @@ function saveStatus(bool) {
 }
 
 run(() => {
-    open = true;
+    openned = true;
     working = false;
 })
 
@@ -171,6 +175,25 @@ run(() => {
     });
 
     bodyObserve.observe(document.body, { childList: true })
-})
+});
 
-// 
+let url = await getUrl();
+url = url[0].result;
+
+if (!url.includes('linkedin.com')) {
+    optionsContainer.style.display = 'none';
+    acessContainer.style.display = 'flex';
+}
+
+
+acessButton.onclick = () => {
+    run(() => window.open('https://linkedin.com', '_blank'));
+}
+
+async function getUrl() {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    return await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        func: () => location.href,
+    });
+};
