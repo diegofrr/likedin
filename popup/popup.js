@@ -56,6 +56,7 @@ async function run(func) {
 }
 
 function apply() {
+    working = true;
     const posts = document.querySelectorAll('.feed-shared-update-v2');
     posts.forEach(post => {
         if (!hasAdded(post)) {
@@ -131,10 +132,11 @@ function apply() {
 }
 
 function removeAll() {
+    working = false;
     const items = document.querySelectorAll('.likedin_v1');
     items.forEach(item => {
         item.remove();
-    })
+    });
 }
 
 function saveStatus(bool) {
@@ -158,7 +160,7 @@ run(() => {
     const bodyObserve = new MutationObserver(() => {
         try {
             const ob = new MutationObserver(() => {
-                if (working) run(apply);
+                if (working) apply;
             });
             ob.observe(document.querySelector('.scaffold-layout__main'),
                 { childList: true, subtree: true });
