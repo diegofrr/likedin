@@ -20,12 +20,10 @@
     ],
     "permissions": [
         "activeTab",
-        "scripting",
-        "https://www.linkedin.com/*",
-        "https://www.google.com/*"
+        "scripting"
     ],
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "/popup/popup.html"
     },
     "icons": {
         "16": "/assets/images/icon_16.png",
