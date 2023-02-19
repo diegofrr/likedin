@@ -123,6 +123,43 @@ body {
     border-radius: 50%;
 }
 
+._linkedin_acess_container {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+    font-size: 12px;
+    color: rgb(228, 103, 103);
+}
+
+._linkedin_acess {
+    width: 100%;
+    background-color: #2d333a;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #0077B7;
+    outline: 2px solid transparent;
+    transition: all .3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+._linkedin_acess:hover {
+    opacity: .8;
+}
 
 footer {
     position: absolute;

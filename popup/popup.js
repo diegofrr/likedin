@@ -1,7 +1,10 @@
+const acessContainer = document.querySelector('._linkedin_acess_container');
+const acessButton = document.querySelector('._linkedin_acess');
+const optionsContainer = document.querySelector('.options_container');
 const toggleStatus = document.querySelector('.active_option .status');
 const toggleInput = document.querySelector('.active_option input');
 
-let open = true;
+let openned = true;
 let working = false;
 
 (async () => {
@@ -94,14 +97,14 @@ function apply() {
                     content.querySelector('a');
 
                 setTimeout(() => {
-                    if (open) clickable.click();
+                    if (openned) clickable.click();
                 }, 500);
 
-                open = true;
+                openned = true;
             }
 
             span.ondblclick = () => {
-                open = false;
+                openned = false;
                 const distance = window.scrollY;
 
                 const button = post.querySelector('.reactions-react-button button');
@@ -153,7 +156,7 @@ function saveStatus(bool) {
 }
 
 run(() => {
-    open = true;
+    openned = true;
     working = false;
 })
 
@@ -172,6 +175,25 @@ run(() => {
     });
 
     bodyObserve.observe(document.body, { childList: true })
-})
+});
 
-// 
+let url = await getUrl();
+url = url[0].result;
+
+if (!url.includes('linkedin.com')) {
+    optionsContainer.style.display = 'none';
+    acessContainer.style.display = 'flex';
+}
+
+
+acessButton.onclick = () => {
+    run(() => window.open('https://linkedin.com', '_blank'));
+}
+
+async function getUrl() {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    return await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        func: () => location.href,
+    });
+};
