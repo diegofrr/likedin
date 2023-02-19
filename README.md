@@ -22,11 +22,6 @@ git clone https://github.com/diegofrr/likedin
 
 Pronto! A extensão foi instalada! Pra utilizar, siga até o Linkedin, <b>abra a extensão e ative</b>, realizando um <b><ins>clique duplo</ins></b> dentro do conteúdo principal dos posts. _Veja o vídeo de demonstração mais abaixo._
 
-### 🚀 Roadmap
-- [x] Painel de configurções (iniciado);
-- [ ] Publicar na Google Web Store;
-- [ ] Criar versão para o Firefox.
-
 ### 📽️ Demonstração
 
 <video src="https://user-images.githubusercontent.com/56923620/219934212-b391dd54-9793-4efa-8f22-28227cf9309c.mp4"/>
