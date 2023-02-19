@@ -60,7 +60,7 @@ function apply() {
 
                 setTimeout(() => {
                     span.classList.remove('likedin__liked');
-                }, 1000);
+                }, 1500);
             }
 
         } else {
