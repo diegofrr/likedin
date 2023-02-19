@@ -20,7 +20,7 @@ git clone https://github.com/diegofrr/likedin
 3) Ative o <b>modo desenvolvedor</b>;
 4) Carregue a extensão "sem empacotador" ou arraste e solte a pasta do repositório para dentro do navegador.
 
-Pronto! A extensão foi instalada e já está funcionando. Siga até o Linkedin para utilizar, realizando um <b><ins>clique duplo</ins></b> dentro do conteúdo principal dos posts.
+Pronto! A extensão foi instalada! Pra utilizar, siga até o Linkedin, <b>abra a extensão e ative</b>, realizando um <b><ins>clique duplo</ins></b> dentro do conteúdo principal dos posts. _Veja o vídeo de demonstração mais abaixo._
 
 ### 🚀 Roadmap
 - [x] Painel de configuração (inicial);
