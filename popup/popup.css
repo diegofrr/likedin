@@ -123,6 +123,19 @@ body {
     border-radius: 50%;
 }
 
+.likedin_alert {
+    display: none;
+    width: 100%;
+    padding: 0 20px;
+    color: rgb(228, 92, 92);
+    font-size: 12px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    place-items: center;
+}
 
 footer {
     position: absolute;

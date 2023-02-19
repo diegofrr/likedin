@@ -1,8 +1,30 @@
+const optionsContainer = document.querySelector('.options_container');
+const likedinAlert = document.querySelector('.likedin_alert');
 const toggleStatus = document.querySelector('.active_option .status');
 const toggleInput = document.querySelector('.active_option input');
 
 let open = true;
 let working = false;
+
+try {
+    let url = await getUrl();
+    url = url[0].result;
+
+    async function getUrl() {
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        return await chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            func: () => location.href,
+        });
+    };
+
+    if (!url.includes('linkedin.com')) notWorking();
+} catch { notWorking() }
+
+function notWorking() {
+    optionsContainer.style.display = 'none';
+    likedinAlert.style.display = 'grid';
+}
 
 (async () => {
     let status = await getStatus();
