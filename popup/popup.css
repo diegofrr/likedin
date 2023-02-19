@@ -21,6 +21,7 @@ body {
     flex-direction: row;
     gap: 5px;
     margin-bottom: 30px;
+    position: relative;
 }
 
 .logo_container img {
@@ -30,6 +31,13 @@ body {
 .logo_container span {
     font-weight: 600;
     font-size: 14px;
+}
+
+.logo_container .version {
+    font-weight: 400;
+    font-size: 8px;
+    opacity: .5;
+    margin-top: 5px;
 }
 
 .options_container {
@@ -115,7 +123,6 @@ body {
     border-radius: 50%;
 }
 
-.reaction_option {}
 
 footer {
     position: absolute;
