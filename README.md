@@ -5,7 +5,7 @@ Likedin<br/>
 </h1>
 Curta posts no LinkedIn facilmente utilizando um clique duplo.
 
-<b>`v1.0.0`</b>
+<b>`v1.1`</b>
 
 </div>
 
