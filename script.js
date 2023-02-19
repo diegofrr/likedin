@@ -1,6 +1,10 @@
 let open = true;
+let working = false;
+
+if (getStatus()) apply();
 
 function apply() {
+    working = true;
     const posts = document.querySelectorAll('.feed-shared-update-v2');
     posts.forEach(post => {
         if (!hasAdded(post)) {
@@ -64,22 +68,20 @@ function apply() {
     });
 }
 
-apply();
-
 function hasAdded(element) {
     return element.querySelector('.likedin_v1');
 }
 
-function removeAll() {
-    const items = document.querySelectorAll('.likedin_v1');
-    items.forEach(item => {
-        item.remove();
-    })
+function getStatus() {
+    let status = JSON.parse(localStorage.getItem('@likedin_v1_status'));
+    return status;
 }
 
 const bodyObserve = new MutationObserver(() => {
     try {
-        const ob = new MutationObserver(() => apply());
+        const ob = new MutationObserver(() => {
+            if (working) apply();
+        });
         ob.observe(document.querySelector('.scaffold-layout__main'),
             { childList: true, subtree: true });
 
@@ -90,9 +92,10 @@ const bodyObserve = new MutationObserver(() => {
 
 bodyObserve.observe(document.body, { childList: true })
 
+
 function likeIcon() {
     return `<?xml version="1.0" encoding="utf-8"?>
-    <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9 4.5C15.9 3 14.418 2 13.26 2c-.806 0-.869.612-.993 1.82-.055.53-.121 1.174-.267 1.93-.386 2.002-1.72 4.56-2.996 5.325V17C9 19.25 9.75 20 13 20h3.773c2.176 0 2.703-1.433 2.899-1.964l.013-.036c.114-.306.358-.547.638-.82.31-.306.664-.653.927-1.18.311-.623.27-1.177.233-1.67-.023-.299-.044-.575.017-.83.064-.27.146-.475.225-.671.143-.356.275-.686.275-1.329 0-1.5-.748-2.498-2.315-2.498H15.5S15.9 6 15.9 4.5zM5.5 10A1.5 1.5 0 0 0 4 11.5v7a1.5 1.5 0 0 0 3 0v-7A1.5 1.5 0 0 0 5.5 10z" fill="#000000"/>
-    </svg>`
+        <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9 4.5C15.9 3 14.418 2 13.26 2c-.806 0-.869.612-.993 1.82-.055.53-.121 1.174-.267 1.93-.386 2.002-1.72 4.56-2.996 5.325V17C9 19.25 9.75 20 13 20h3.773c2.176 0 2.703-1.433 2.899-1.964l.013-.036c.114-.306.358-.547.638-.82.31-.306.664-.653.927-1.18.311-.623.27-1.177.233-1.67-.023-.299-.044-.575.017-.83.064-.27.146-.475.225-.671.143-.356.275-.686.275-1.329 0-1.5-.748-2.498-2.315-2.498H15.5S15.9 6 15.9 4.5zM5.5 10A1.5 1.5 0 0 0 4 11.5v7a1.5 1.5 0 0 0 3 0v-7A1.5 1.5 0 0 0 5.5 10z" fill="#000000"/>
+        </svg>`
 }
