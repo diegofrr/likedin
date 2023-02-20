@@ -137,6 +137,54 @@ body {
     place-items: center;
 }
 
+.reaction_option {
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+
+.reaction_option span {
+    width: 100%;
+    color: #FFF;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.reaction_option .reactions_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.reaction_option likedin_react {
+    cursor: pointer;
+    opacity: .5;
+    width: 46px;
+    height: 46px;
+    transition: all .3s ease;
+    filter: grayscale(.7);
+    outline: 2px solid transparent;
+    border-radius: 10px;
+}
+
+.reaction_option likedin_react:hover {
+    opacity: 1;
+    filter: none;
+}
+
+.reaction_option likedin_react._selected {
+    opacity: 1;
+    outline-color: #FFF;
+    filter: none;
+}
+
+.reaction_option likedin_react img {
+    width: 100%;
+    height: 100%;
+}
+
 footer {
     position: absolute;
     width: 100%;

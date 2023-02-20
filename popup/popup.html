@@ -9,23 +9,52 @@
 </head>
 
 <body>
-    <div class="logo_container">
+    <header class="logo_container">
         <img src="../assets/images/icon_128.svg" alt="">
         <span>Likedin</span>
-        <span class="version">v1.1</span>
-    </div>
+        <span class="version">v1.3</span>
+    </header>
 
-    <div class="options_container">
-        <div class="active_option">
-            <span class="status">Desativado</span>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
+    <main id="likedin_main">
+        <div class="options_container">
+            <div class="active_option">
+                <span class="status">Desativado</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="reaction_option">
+                <span>Reação padrão</span>
+                <div class="reactions_container">
+                    <likedin_react class="_selected" react-id="0">
+                        <img src="../assets/images/reactions/react_1.svg">
+                    </likedin_react>
+
+                    <likedin_react react-id="1">
+                        <img src="../assets/images/reactions/react_2.svg">
+                    </likedin_react>
+
+                    <likedin_react react-id="2">
+                        <img src="../assets/images/reactions/react_3.svg">
+                    </likedin_react>
+
+                    <likedin_react react-id="3">
+                        <img src="../assets/images/reactions/react_4.svg">
+                    </likedin_react>
+
+                    <likedin_react react-id="4">
+                        <img src="../assets/images/reactions/react_5.svg">
+                    </likedin_react>
+
+                    <likedin_react react-id="5">
+                        <img src="../assets/images/reactions/react_6.svg">
+                    </likedin_react>
+                </div>
+            </div>
         </div>
-
-        <div class="reaction_option"></div>
-    </div>
+    </main>
 
     <div class="likedin_alert">
         Acesse o Linkedin para utilizar a extensão.
@@ -41,6 +70,7 @@
         </a>
     </footer>
     <script type="module" src="popup.js"></script>
+    <script type="module" src="reactions.js"></script>
 </body>
 
 </html>
