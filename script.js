@@ -45,7 +45,7 @@ function apply() {
           ob.disconnect();
           setTimeout(() => {
             enableScroll();
-          }, 400);
+          }, 500);
         }
       });
 
@@ -74,7 +74,7 @@ function apply() {
 
         setTimeout(() => {
           span.classList.remove('likedin__liked');
-        }, 3000);
+        }, 4000);
       }
 
     }
