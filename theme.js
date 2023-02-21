@@ -9,16 +9,19 @@ if (!theme) {
     document.body.insertBefore(ifr, document.body.firstChild)
 
     const _interval = setInterval(() => {
-        const _body = ifr.contentDocument.body;
-        if (_body.classList.contains('boot-complete')) {
-            clearInterval(_interval)
-            _body.querySelectorAll('.config-setting-card__setting-item-ctrl div label')[1].click();
-            if (document.querySelector('html')
-                .classList.contains('theme--dark')) {
-                localStorage.setItem('@likedin_theme', 'dark');
-            } else localStorage.setItem('@likedin_theme', 'light');
-            location.reload()
-        }
+        try {
+            const _body = ifr.contentDocument.body;
+            if (_body.classList.contains('boot-complete')) {
+                clearInterval(_interval)
+                const _html = document.querySelector('html');
+                if (_html.classList.contains('theme--dark')) {
+                    localStorage.setItem('@likedin_theme', 'dark');
+                    _html.classList.remove('theme--dark')
+                } else localStorage.setItem('@likedin_theme', 'light');
+                _body.querySelectorAll('.config-setting-card__setting-item-ctrl div label')[1].click();
+                location.reload()
+            }
+        } catch { }
 
     }, 1000)
 } else {
