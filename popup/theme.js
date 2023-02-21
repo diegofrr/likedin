@@ -49,10 +49,11 @@ function toggleTheme() {
         const _html = document.querySelector('html');
 
         if (_html.classList.contains('theme--dark')) {
-            _html.classList.remove('theme--dark');
+            _html.classList.remove('theme--dark', 'theme--dark-lix', 'theme--mercado-dark');
+            _html.classList.add('theme', 'theme--mercado', 'artdeco')
             localStorage.setItem('@likedin_theme', 'light');
         } else {
-            _html.classList.add('theme--dark');
+            _html.classList.add('theme--dark', 'theme--dark-lix', 'theme--mercado-dark');
             localStorage.setItem('@likedin_theme', 'dark');
         }
     });
