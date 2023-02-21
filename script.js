@@ -119,7 +119,6 @@ const bodyObserve = new MutationObserver(() => {
 
 bodyObserve.observe(document.body, { childList: true })
 
-
 function likeIcon(id) {
   return id == 0 ?
     `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="like-consumption-medium" data-supported-dps="24x24">

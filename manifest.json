@@ -9,7 +9,8 @@
                 "https://www.linkedin.com/*"
             ],
             "js": [
-                "script.js"
+                "script.js",
+                "theme.js"
             ],
             "css": [
                 "styles.css"

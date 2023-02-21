@@ -54,15 +54,13 @@ try {
     }
 
     async function getStatus() {
-        let bool;
         const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-        bool = await chrome.scripting.executeScript({
+        return await chrome.scripting.executeScript({
             target: { tabId: tab.id },
             func: () => {
                 return JSON.parse(localStorage.getItem('@likedin_v1_status'));
             }
         });
-        return bool;
     };
 
     async function run(func) {
