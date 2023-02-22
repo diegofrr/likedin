@@ -24,5 +24,4 @@ Pronto! A extensão foi instalada! Pra utilizar, siga até o Linkedin, <b>abra a
 
 ### 📽️ Demonstração
 
-<video src="https://user-images.githubusercontent.com/56923620/220196577-3a8c82b0-4591-4fd8-8f5b-ce1de98540d9.mp4
-"/>
+<video src="https://user-images.githubusercontent.com/56923620/220661808-4e1d5c2e-a588-4417-82a2-486fb0e48e56.mp4"/>
