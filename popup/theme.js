@@ -1,3 +1,5 @@
+run(() => { if (!localStorage.getItem('@likedin_theme')) location.reload(); })
+
 const buttonContainer = document.querySelector('.toggle-theme_container');
 const toggleBtn = buttonContainer.querySelector('span');
 
