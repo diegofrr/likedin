@@ -1,10 +1,20 @@
-run(() => { if (!localStorage.getItem('@likedin_theme')) location.reload(); })
+
+async function initialCheck() {
+    let isThemed = await getTheme();
+    isThemed = isThemed[0].result;
+    if (!isThemed) {
+        run(() => { location.reload(); });
+        window.close();
+    }
+}
 
 const buttonContainer = document.querySelector('.toggle-theme_container');
 const toggleBtn = buttonContainer.querySelector('span');
 
 let _isDark = await getTheme();
 _isDark = _isDark[0].result === 'dark';
+
+initialCheck();
 
 if (_isDark) toggleBtn.classList.add('is-dark');
 else toggleBtn.classList.remove('is-dark');
