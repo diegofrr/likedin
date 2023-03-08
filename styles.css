@@ -19,7 +19,7 @@
 
 .likedin__liked svg {
     opacity: 0;
-    animation: icon_animated 1.5s 2 alternate ease-in-out;
+    animation: icon_animated 1s 2 alternate ease-in-out;
 }
 
 @keyframes icon_animated {
