@@ -18,9 +18,7 @@ try {
         });
     };
 
-    if (!url.includes('linkedin.com')) {
-        if (!url.includes('google.com')) notWorking();
-    }
+    if (!url.includes('linkedin.com')) notWorking();
 
     (async () => {
         let status = await getStatus();

@@ -1,11 +1,8 @@
-
 async function initialCheck() {
-    let isThemed = await getTheme();
-    isThemed = isThemed[0].result;
-    if (!isThemed) {
-        run(() => { location.reload(); });
-        window.close();
-    }
+    const _inLinkedin = await (await inLinkedin())[0].result;
+    const _isThemed = await (await getTheme())[0].result;
+
+    if (_inLinkedin && !_isThemed) run(() => { location.reload(); });
 }
 
 const buttonContainer = document.querySelector('.toggle-theme_container');
@@ -42,6 +39,16 @@ async function getStatus() {
         }
     });
 };
+
+async function inLinkedin() {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    return await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        func: () => {
+            return location.href.includes('linkedin.com');
+        }
+    });
+}
 
 async function run(func) {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
