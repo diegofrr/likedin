@@ -3,7 +3,7 @@
 <img width='32' src="https://user-images.githubusercontent.com/56923620/219518854-cb03aa8d-7ae3-40fa-88b1-81ca7329088b.svg" />
 Likedin<br/>
 </h1>
-Curta posts no LinkedIn facilmente utilizando um clique duplo e altere o tema facilmente.
+Curta posts no LinkedIn utilizando um clique duplo e altere o tema facilmente.
 
 <b>`v1.7`</b>
 
